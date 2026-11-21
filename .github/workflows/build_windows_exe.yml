@@ -1,0 +1,13 @@
+name: Build Samahi App Windows EXE
+on: [push, workflow_dispatch]
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: pip install -r windows_app/requirements.txt pyinstaller
+      - run: pyinstaller --noconfirm --onefile --windowed --name SamahiApp --icon branding/logo_icon_1024.png --add-data "windows_app/vectorfont;vectorfont" windows_app/app.py
+      - uses: actions/upload-artifact@v4
+        with: {name: SamahiApp-Windows, path: dist/SamahiApp.exe}
