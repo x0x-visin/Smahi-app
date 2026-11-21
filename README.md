@@ -1,2 +1,3 @@
-# Smahi-app
-Samahi App — Convert images into vector TrueType/OpenType fonts (.ttf) and SVG outlines, with Windows desktop and Android client apps.
+# Samahi App
+Image → upscale → vector outlines → TrueType font. Full guide: docs/TUTORIAL.md.
+Push to GitHub to auto-build the Windows EXE and Android APK (.github/workflows/).
